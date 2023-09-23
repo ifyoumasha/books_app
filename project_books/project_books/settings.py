@@ -19,8 +19,10 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'djoser',
+    'phonenumber_field',
 
     'users.apps.UsersConfig',
+    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [
