@@ -25,6 +25,7 @@ class CustomUser(AbstractUser):
     )
     phone = PhoneNumberField(
         'Номер телефона',
+        max_length=16,
         unique=True,
     )
 

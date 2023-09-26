@@ -17,12 +17,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_framework',
+    'django_filters',
     'djoser',
     'phonenumber_field',
+    'rest_framework',
 
-    'users.apps.UsersConfig',
     'books.apps.BooksConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -91,6 +92,9 @@ SIMPLE_JWT = {
    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
    'AUTH_HEADER_TYPES': ('Bearer',),
 }
+
+NAME_REGEX_PATTERN = r"[А-Яа-яA-Za-z ]+"
+PHONE_NUMBER_REGEX = r"^\+?1?\d{8,15}$"
 
 LANGUAGE_CODE = 'en-us'
 

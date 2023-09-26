@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Book(models.Model):
+    """Модель книги."""
+
     image = models.ImageField(
         'Картинка книги',
         upload_to='books/'
@@ -42,6 +44,12 @@ class Book(models.Model):
 
 
 class Category(models.Model):
+    """Модель категории."""
+
+    STATUS_CHOICES = (
+        (0, 'PUBLISH'),
+        (1, 'MEAP'),
+    )
     category = models.ForeignKey(
         Book,
         on_delete=models.CASCADE
@@ -50,6 +58,7 @@ class Category(models.Model):
         Book,
         on_delete=models.CASCADE
     )
+    status = models.IntegerField(choices=STATUS_CHOICES, default=0)
     # добавить категорию Новинки
     # new_books = models.models.ForeignKey(
         # Book,
